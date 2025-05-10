@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Finalmouse - Valorant Edition</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body style="font-family: 'Orbitron', sans-serif;"> 
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Finalmouse x Valorant</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="divs.html">Partnered Pro Setups</a></li>
+          <li class="nav-item"><a class="nav-link active" href="form.html">Pre-Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="cards.html">Finalmouse Gear</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Order Form -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Order Your Finalmouse</h2>
+    <div id="alertSuccess" class="alert alert-success d-none" role="alert">
+      ✅ Thank you for your order! We'll contact you shortly.
+    </div>
+    <form id ="orderForm">
+      <!-- Customer Info -->
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="emailAddress" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="shippingAddress" class="form-label">Shipping Address</label>
+        <textarea class="form-control" id="shippingAddress" rows="3" required></textarea>
+      </div>
+
+      <!-- Product Selection -->
+      <div class="mb-3">
+        <label for="mouseChoice" class="form-label">Select Your Mouse</label>
+        <select class="form-select" id="mouseChoice" required>
+          <option value="">-- Choose a Mouse --</option>
+          <option value="Starlight Pro">TenZ – Starlight Pro</option>
+          <option value="ULX Prophecy">Tarik – ULX Prophecy</option>
+          <option value="ULX Pro">Aceu – ULX Pro</option>
+        </select>
+      </div>
+
+      <!-- Quantity -->
+      <div class="mb-3">
+        <label for="quantity" class="form-label">Quantity</label>
+        <input type="number" class="form-control" id="quantity" min="1" value="1" required>
+      </div>
+
+      <!-- Notes -->
+      <div class="mb-3">
+        <label for="orderNotes" class="form-label">Order Notes (optional)</label>
+        <textarea class="form-control" id="orderNotes" rows="2"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 Finalmouse x Valorant Pros. All rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  
+  <!-- Form Confirmation -->
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form from actually submitting
+    const alertBox = document.getElementById("alertSuccess");
+
+    // Show the success alert
+    alertBox.classList.remove("d-none");
+
+    // Optionally reset the form
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
